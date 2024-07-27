@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
+import NavLayout from "@/components/layouts/l-nav-layout";
+import JotaiProvider from "@/components/providers/jotai";
 
-const inter = Inter({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={rubik.className}>
+        <JotaiProvider>
+          <NavLayout>{children}</NavLayout>
+        </JotaiProvider>
+      </body>
     </html>
   );
 }
