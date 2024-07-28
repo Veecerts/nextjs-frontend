@@ -30,7 +30,7 @@ const NFTCard: React.FC<Props> = ({ url, title, publicDoc, onChange }) => {
         onChange && onChange(dataURLtoFile(data, `${title?.slice(0, 10)}.png`));
       }
     })();
-  }, [url, title, publicDoc]);
+  }, [url, title, publicDoc, onChange]);
 
   return (
     <div className="bg-transparent">

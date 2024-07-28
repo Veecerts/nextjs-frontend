@@ -50,7 +50,7 @@ const PricingCard: React.FC<Props> = (props) => {
       </Button>
       <div className="flex flex-col gap-4">
         {props.features.map((feature) => (
-          <div className="flex items-center gap-4">
+          <div key={feature} className="flex items-center gap-4">
             <span className="text-lg">
               <IconParkSolidCheckOne />
             </span>

@@ -25,6 +25,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "graphql": "^16.9.0",
+    "graphql-tag": "^2.12.6",
     "html2canvas": "^1.4.1",
     "ipfs-only-hash": "^4.0.0",
     "jotai": "^2.9.1",

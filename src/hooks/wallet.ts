@@ -36,7 +36,7 @@ const useWallet = () => {
       setAllowed(allowed);
       setValue((c) => ({ ...c, isConnected: connected, publicKey }));
     })();
-  }, []);
+  }, [setValue]);
 
   const connectWallet = async () => {
     const publicKey = await requestAccess();

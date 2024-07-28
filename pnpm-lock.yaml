@@ -50,6 +50,9 @@ dependencies:
   graphql:
     specifier: ^16.9.0
     version: 16.9.0
+  graphql-tag:
+    specifier: ^2.12.6
+    version: 2.12.6(graphql@16.9.0)
   html2canvas:
     specifier: ^1.4.1
     version: 1.4.1
@@ -4428,7 +4431,6 @@ packages:
     dependencies:
       graphql: 16.9.0
       tslib: 2.6.3
-    dev: true
 
   /graphql-ws@5.16.0(graphql@16.9.0):
     resolution: {integrity: sha512-Ju2RCU2dQMgSKtArPbEtsK5gNLnsQyTNIo/T7cZNp96niC1x0KdJNZV0TIoilceBPQwfb5itrGl8pkFeOUMl4A==}
