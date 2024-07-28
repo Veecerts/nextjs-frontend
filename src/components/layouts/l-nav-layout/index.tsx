@@ -1,16 +1,16 @@
-import TopNav from "@/components/atoms/a-top-nav";
+import TopNav from "@/components/molecules/m-top-nav";
 
 interface Props {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 const NavLayout: React.FC<Props> = ({ children }) => {
-  return (
-    <div>
-      <TopNav />
-      {children}
-    </div>
-  );
+	return (
+		<div>
+			<TopNav />
+			{children}
+		</div>
+	);
 };
 
 export default NavLayout;

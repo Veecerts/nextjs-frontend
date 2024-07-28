@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
-import NavLayout from "@/components/layouts/l-nav-layout";
 import JotaiProvider from "@/components/providers/jotai";
+import URQLProvider from "@/components/providers/urql";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -19,9 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={rubik.className}>
-        <JotaiProvider>
-          <NavLayout>{children}</NavLayout>
-        </JotaiProvider>
+        <URQLProvider>
+          <JotaiProvider>{children}</JotaiProvider>
+        </URQLProvider>
+        <Toaster />
       </body>
     </html>
   );
