@@ -16,7 +16,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "types": [
-      "unplugin-icons/types/react"
+      "unplugin-icons/types/react",
+      "node"
     ],
     "incremental": true,
     "plugins": [
