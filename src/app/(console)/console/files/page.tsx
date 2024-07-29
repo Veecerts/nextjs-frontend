@@ -1,8 +1,10 @@
+import Search from '@/components/atoms/a-search-bar'
+
 const ConsoleFilesPage = () => {
 	return (
 		<div>
 			<div>
-				<input className="Search" />
+				<Search/>
 			</div>
 		</div>
 	);
