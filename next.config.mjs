@@ -38,7 +38,6 @@ const nextConfig = {
     ],
   },
   webpack(config) {
-    config.resolve.alias.canvas = false;
     config.plugins.push(
       Icons({
         compiler: "jsx",

@@ -4,12 +4,6 @@ import { generateUrlFromIpfsHash } from "@/lib/utils/ipfs";
 import { useFilesQuery } from "@/services/graphql/generated";
 import Image from "next/image";
 import Link from "next/link";
-import { pdfjs } from "react-pdf";
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url,
-).toString();
 
 const ConsoleFilesPage = () => {
   const [{ data, fetching, error }] = useFilesQuery();
