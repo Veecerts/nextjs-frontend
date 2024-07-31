@@ -50,7 +50,14 @@ export type MutationUploadFileArgs = {
 
 export type Query = {
   __typename?: 'Query';
+  file: FileType;
+  files: Array<FileType>;
   version: Scalars['String']['output'];
+};
+
+
+export type QueryFileArgs = {
+  id: Scalars['Int']['input'];
 };
 
 export type FileUploadMutationVariables = Exact<{
@@ -59,6 +66,18 @@ export type FileUploadMutationVariables = Exact<{
 
 
 export type FileUploadMutation = { __typename?: 'Mutation', uploadFile: { __typename?: 'FileType', id: number, title: string, nftIpfsHash: string, fileIpfsHash: string } };
+
+export type FilesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FilesQuery = { __typename?: 'Query', files: Array<{ __typename?: 'FileType', creator: string, description: string, fileIpfsHash: string, id: number, nftIpfsHash: string, public?: boolean | null, title: string }> };
+
+export type FileQueryVariables = Exact<{
+  id: Scalars['Int']['input'];
+}>;
+
+
+export type FileQuery = { __typename?: 'Query', file: { __typename?: 'FileType', creator: string, description: string, fileIpfsHash: string, id: number, nftIpfsHash: string, public?: boolean | null, title: string } };
 
 
 export const FileUploadDocument = gql`
@@ -74,4 +93,38 @@ export const FileUploadDocument = gql`
 
 export function useFileUploadMutation() {
   return Urql.useMutation<FileUploadMutation, FileUploadMutationVariables>(FileUploadDocument);
+};
+export const FilesDocument = gql`
+    query Files {
+  files {
+    creator
+    description
+    fileIpfsHash
+    id
+    nftIpfsHash
+    public
+    title
+  }
+}
+    `;
+
+export function useFilesQuery(options?: Omit<Urql.UseQueryArgs<FilesQueryVariables>, 'query'>) {
+  return Urql.useQuery<FilesQuery, FilesQueryVariables>({ query: FilesDocument, ...options });
+};
+export const FileDocument = gql`
+    query File($id: Int!) {
+  file(id: $id) {
+    creator
+    description
+    fileIpfsHash
+    id
+    nftIpfsHash
+    public
+    title
+  }
+}
+    `;
+
+export function useFileQuery(options: Omit<Urql.UseQueryArgs<FileQueryVariables>, 'query'>) {
+  return Urql.useQuery<FileQuery, FileQueryVariables>({ query: FileDocument, ...options });
 };

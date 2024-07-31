@@ -1,17 +1,26 @@
-'use client';
-import dynamic from 'next/dynamic';
+"use client";
+import dynamic from "next/dynamic";
+import {
+  barChartDataWeeklyRevenue,
+  barChartOptionsWeeklyRevenue,
+} from "../chart";
+import React from "react";
 // import Chart from 'react-apexcharts';
-const Chart = dynamic(() => import('react-apexcharts'), {
+const Chart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
 
-const BarChart = (props) => {
+interface Props {
+  chartData: typeof barChartDataWeeklyRevenue;
+  chartOptions: typeof barChartOptionsWeeklyRevenue;
+}
+
+const BarChart: React.FC<Props> = (props) => {
   const { chartData, chartOptions } = props;
 
   return (
-    // @ts-expect-error
     <Chart
-      options={chartOptions}
+      options={chartOptions as any}
       type="bar"
       width="100%"
       height="100%"

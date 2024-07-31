@@ -1,15 +1,20 @@
-'use client';
-import dynamic from 'next/dynamic';
+"use client";
+import dynamic from "next/dynamic";
+import React from "react";
 // import Chart from 'react-apexcharts';
-const Chart = dynamic(() => import('react-apexcharts'), {
+const Chart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
 
-const LineChart = (props) => {
+interface Props {
+  chartData: any;
+  chartOptions: any;
+}
+
+const LineChart: React.FC<Props> = (props) => {
   const { chartData, chartOptions } = props;
 
   return (
-    // @ts-expect-error
     <Chart
       options={chartOptions}
       type="line"
