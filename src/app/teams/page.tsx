@@ -14,20 +14,20 @@ export default function Page() {
     router.push("/#reach-us");
   };
   const members = [
-    {
-      imageUrl: "/andi-img.png",
-      name: "Andi",
-      role: "Project Manager",
-      twitter: "https://x.com/Handinomeric?t=HX4N8CEGxu2ywoYxMI-3BQ&s=09",
-      linkedin: "https://www.linkedin.com/in/andikan-inyang",
-    },
-    {
-      imageUrl: "/glory-img.png",
-      name: "Glory",
-      role: "Marketing Strategist",
-      twitter: "https://x.com/iamgloryrolland",
-      linkedin: "https://www.linkedin.com/in/glory-uwazuruike-6a755b210/",
-    },
+    // {
+    //   imageUrl: "/andi-img.png",
+    //   name: "Andi",
+    //   role: "Project Manager",
+    //   twitter: "https://x.com/Handinomeric?t=HX4N8CEGxu2ywoYxMI-3BQ&s=09",
+    //   linkedin: "https://www.linkedin.com/in/andikan-inyang",
+    // },
+    // {
+    //   imageUrl: "/glory-img.png",
+    //   name: "Glory",
+    //   role: "Marketing Strategist",
+    //   twitter: "https://x.com/iamgloryrolland",
+    //   linkedin: "https://www.linkedin.com/in/glory-uwazuruike-6a755b210/",
+    // },
     {
       imageUrl: "/victor-img.png",
       name: "Victor",
